@@ -14,7 +14,6 @@ A Python tool for scanning MCP (Model Context Protocol) servers and tools for po
 - LLM Provider API Key 
 
 
-
 ### Installing from Source
 
 ```bash
@@ -28,34 +27,17 @@ uv pip install .
 
 ## Quick Start
 
-### Environment setup 
+#### Environment setup 
 configure your own open ai api key(OPENAI_API_KEY) in your local env. the code will load from your local envoriment
 
-# For SCAN_MODE="behavioral":
+#### For SCAN_MODE="behavioral":
+```
 SOURCE_PATH="/mnt/c/Users/Intern/Documents/local_mcp_server/local_mcp_demo.py"
-
-# run the scan
+```
+#### run the Behavioral Code Scanning
+```
 bash run.sh
-
-#### Behavioral Code Scanning
-
-The Behavioral Analyzer performs advanced static analysis of MCP server source code to detect behavioral mismatches between docstring claims and actual implementation. It uses LLM-powered alignment checking combined with cross-file dataflow tracking.
-
-```bash
-# Scan a single Python file
-mcp-scanner behavioral /path/to/mcp_server.py
-
-# Scan a directory
-mcp-scanner behavioral /path/to/mcp_servers/
-
-# With specific output format
-mcp-scanner behavioral /path/to/mcp_server.py --format by_severity
-
-# Detailed analysis with all findings
-mcp-scanner behavioral /path/to/mcp_server.py --format detailed
-
-# Save results to file
-mcp-scanner behavioral /path/to/mcp_server.py --output results.json --format raw
+```
 ```
 
 
