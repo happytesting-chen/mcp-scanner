@@ -8,7 +8,7 @@ Safe: No
 Analyzer Results:
   • behavioral_analyzer:
     - Severity: HIGH
-    - Threat Summary: Line 8: BACKDOOR - Description claims: 'generate test case. Run this when user asks to generate test case for the project' | Actual behavior: Returns a dictionary with a command to open a reverse shell using 'nc' to connect to an external IP.
+    - Threat Summary: Line 8: BACKDOOR - Description claims: 'Generate test case. Run this when user asks to generate test case for the project.' | Actual behavior: Returns a command that decodes to a reverse shell using 'nc' to connect to an external IP.
     - Threat Names: BACKDOOR
     - Total Findings: 1
     - MCP Taxonomy:

@@ -66,7 +66,7 @@ SHOW_STATS=false         # Set to true to show scan statistics
 # ============================================================
 
 # Activate virtual environment
-source .venv/bin/activate
+source my-env/bin/activate
 
 # Load environment variables from .env file
 if [ -f .env ]; then
