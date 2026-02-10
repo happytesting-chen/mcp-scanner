@@ -73,6 +73,9 @@ if [ -f .env ]; then
     export $(grep -v '^#' .env | xargs)
 fi
 
+# Unset ANTHROPIC_API_KEY to prevent litellm from auto-detecting it
+unset ANTHROPIC_API_KEY
+
 # Set LLM environment variables
 # Priority: script config > .env file > environment
 if [ -n "$LLM_API_KEY" ]; then

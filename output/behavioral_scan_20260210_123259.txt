@@ -1,0 +1,247 @@
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+2026-02-10 12:33:51,050 - mcpscanner.core.analyzers.behavioral.alignment.alignment_llm_client - ERROR - LLM alignment verification failed: litellm.BadRequestError: OpenAIException - Invalid Anthropic API Key
+Traceback (most recent call last):
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/llms/openai/openai.py", line 840, in acompletion
+    headers, response = await self.make_openai_chat_completion_request(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/litellm_core_utils/logging_utils.py", line 190, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/llms/openai/openai.py", line 460, in make_openai_chat_completion_request
+    raise e
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/llms/openai/openai.py", line 437, in make_openai_chat_completion_request
+    await openai_aclient.chat.completions.with_raw_response.create(
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/openai/_legacy_response.py", line 381, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 2678, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/openai/_base_client.py", line 1884, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/openai/_base_client.py", line 1669, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'code': 'authentication_error', 'message': 'Invalid Anthropic API Key', 'type': 'invalid_request_error', 'param': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/main.py", line 611, in acompletion
+    response = await init_response
+               ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/llms/openai/openai.py", line 887, in acompletion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'code': 'authentication_error', 'message': 'Invalid Anthropic API Key', 'type': 'invalid_request_error', 'param': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/mcpscanner/core/analyzers/behavioral/alignment/alignment_llm_client.py", line 171, in _make_llm_request
+    response = await acompletion(**request_params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/utils.py", line 2040, in wrapper_async
+    raise e
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/utils.py", line 1861, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/main.py", line 630, in acompletion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2378, in exception_type
+    raise e
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 444, in exception_type
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: OpenAIException - Invalid Anthropic API Key
+2026-02-10 12:33:51,101 - mcpscanner.core.analyzers.behavioral.alignment.alignment_llm_client - WARNING - LLM request failed (attempt 1/3): litellm.BadRequestError: OpenAIException - Invalid Anthropic API Key. Retrying in 1.0s...
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+2026-02-10 12:33:53,510 - mcpscanner.core.analyzers.behavioral.alignment.alignment_llm_client - ERROR - LLM alignment verification failed: litellm.BadRequestError: OpenAIException - Invalid Anthropic API Key
+Traceback (most recent call last):
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/llms/openai/openai.py", line 840, in acompletion
+    headers, response = await self.make_openai_chat_completion_request(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/litellm_core_utils/logging_utils.py", line 190, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/llms/openai/openai.py", line 460, in make_openai_chat_completion_request
+    raise e
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/llms/openai/openai.py", line 437, in make_openai_chat_completion_request
+    await openai_aclient.chat.completions.with_raw_response.create(
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/openai/_legacy_response.py", line 381, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 2678, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/openai/_base_client.py", line 1884, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/openai/_base_client.py", line 1669, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'code': 'authentication_error', 'message': 'Invalid Anthropic API Key', 'type': 'invalid_request_error', 'param': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/main.py", line 611, in acompletion
+    response = await init_response
+               ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/llms/openai/openai.py", line 887, in acompletion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'code': 'authentication_error', 'message': 'Invalid Anthropic API Key', 'type': 'invalid_request_error', 'param': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/mcpscanner/core/analyzers/behavioral/alignment/alignment_llm_client.py", line 171, in _make_llm_request
+    response = await acompletion(**request_params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/utils.py", line 2040, in wrapper_async
+    raise e
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/utils.py", line 1861, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/main.py", line 630, in acompletion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2378, in exception_type
+    raise e
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 444, in exception_type
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: OpenAIException - Invalid Anthropic API Key
+2026-02-10 12:33:53,544 - mcpscanner.core.analyzers.behavioral.alignment.alignment_llm_client - WARNING - LLM request failed (attempt 2/3): litellm.BadRequestError: OpenAIException - Invalid Anthropic API Key. Retrying in 2.0s...
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+2026-02-10 12:33:55,871 - mcpscanner.core.analyzers.behavioral.alignment.alignment_llm_client - ERROR - LLM alignment verification failed: litellm.BadRequestError: OpenAIException - Invalid Anthropic API Key
+Traceback (most recent call last):
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/llms/openai/openai.py", line 840, in acompletion
+    headers, response = await self.make_openai_chat_completion_request(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/litellm_core_utils/logging_utils.py", line 190, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/llms/openai/openai.py", line 460, in make_openai_chat_completion_request
+    raise e
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/llms/openai/openai.py", line 437, in make_openai_chat_completion_request
+    await openai_aclient.chat.completions.with_raw_response.create(
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/openai/_legacy_response.py", line 381, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 2678, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/openai/_base_client.py", line 1884, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/openai/_base_client.py", line 1669, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'code': 'authentication_error', 'message': 'Invalid Anthropic API Key', 'type': 'invalid_request_error', 'param': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/main.py", line 611, in acompletion
+    response = await init_response
+               ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/llms/openai/openai.py", line 887, in acompletion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'code': 'authentication_error', 'message': 'Invalid Anthropic API Key', 'type': 'invalid_request_error', 'param': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/mcpscanner/core/analyzers/behavioral/alignment/alignment_llm_client.py", line 171, in _make_llm_request
+    response = await acompletion(**request_params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/utils.py", line 2040, in wrapper_async
+    raise e
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/utils.py", line 1861, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/main.py", line 630, in acompletion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2378, in exception_type
+    raise e
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 444, in exception_type
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: OpenAIException - Invalid Anthropic API Key
+2026-02-10 12:33:55,909 - mcpscanner.core.analyzers.behavioral.alignment.alignment_llm_client - ERROR - LLM request failed after 3 attempts: litellm.BadRequestError: OpenAIException - Invalid Anthropic API Key
+2026-02-10 12:33:55,909 - mcpscanner.core.analyzers.behavioral.alignment.alignment_orchestrator - ERROR - LLM verification failed for generate_test_case: litellm.BadRequestError: OpenAIException - Invalid Anthropic API Key
+Traceback (most recent call last):
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/llms/openai/openai.py", line 840, in acompletion
+    headers, response = await self.make_openai_chat_completion_request(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/litellm_core_utils/logging_utils.py", line 190, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/llms/openai/openai.py", line 460, in make_openai_chat_completion_request
+    raise e
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/llms/openai/openai.py", line 437, in make_openai_chat_completion_request
+    await openai_aclient.chat.completions.with_raw_response.create(
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/openai/_legacy_response.py", line 381, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 2678, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/openai/_base_client.py", line 1884, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/openai/_base_client.py", line 1669, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'code': 'authentication_error', 'message': 'Invalid Anthropic API Key', 'type': 'invalid_request_error', 'param': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/main.py", line 611, in acompletion
+    response = await init_response
+               ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/llms/openai/openai.py", line 887, in acompletion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'code': 'authentication_error', 'message': 'Invalid Anthropic API Key', 'type': 'invalid_request_error', 'param': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/mcpscanner/core/analyzers/behavioral/alignment/alignment_orchestrator.py", line 118, in check_alignment
+    response = await self.llm_client.verify_alignment(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/mcpscanner/core/analyzers/behavioral/alignment/alignment_llm_client.py", line 109, in verify_alignment
+    return await self._make_llm_request(prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/mcpscanner/core/analyzers/behavioral/alignment/alignment_llm_client.py", line 171, in _make_llm_request
+    response = await acompletion(**request_params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/utils.py", line 2040, in wrapper_async
+    raise e
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/utils.py", line 1861, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/main.py", line 630, in acompletion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2378, in exception_type
+    raise e
+  File "/mnt/c/Users/Intern/Documents/testing_github_repo/my-env/lib/python3.11/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 444, in exception_type
+    raise BadRequestError(
+litellm.exceptions.BadRequestError: litellm.BadRequestError: OpenAIException - Invalid Anthropic API Key
+2026-02-10 12:33:55,960 - mcpscanner.core.analyzers.behavioral.alignment.alignment_orchestrator - ERROR - Alignment check failed for generate_test_case: litellm.BadRequestError: OpenAIException - Invalid Anthropic API Key
+=== MCP Scanner Detailed Results ===
+
+Scan Target: behavioral:/mnt/c/Users/Intern/Documents/local_mcp_server/local_mcp_demo.py
+
+Tool 1: /mnt/c/Users/Intern/Documents/local_mcp_server/local_mcp_demo.py
+Status: completed
+Safe: Yes
+No findings.
+
