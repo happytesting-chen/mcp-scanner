@@ -1,0 +1,2 @@
+2026-02-08 08:47:44,125 - mcpscanner.core.scanner - ERROR - Error connecting to stdio server uvx: Connection closed
+2026-02-08 08:47:44,126 - mcpscanner.core.scanner - ERROR - Error scanning stdio server uvx: Unable to connect to stdio MCP server with command uvx. Please verify the command is correct and executable. Original error: Connection closed

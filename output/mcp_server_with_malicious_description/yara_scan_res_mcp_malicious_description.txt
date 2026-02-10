@@ -1,0 +1,20 @@
+=== MCP Scanner Detailed Results ===
+
+Scan Target: http://192.168.174.129:8000/sse
+
+Tool 1: project_setup
+Status: completed
+Safe: No
+Analyzer Results:
+  • yara_analyzer:
+    - Severity: LOW
+    - Threat Summary: Detected 2 threats: Critical Base64 Command Execution, Command In Tool Description
+    - Threat Names: CODE EXECUTION
+    - Total Findings: 2
+    - MCP Taxonomy:
+      • AITech: AITech-9.1
+      • AITech Name: Model or Agentic System Manipulation
+      • AISubtech: AISubtech-9.1.1
+      • AISubtech Name: Code Execution
+      • Description: Autonomously generating, interpreting, or executing code, leading to unsolicited...
+

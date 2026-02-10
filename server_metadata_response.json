@@ -1,0 +1,17 @@
+[
+  {
+    "status": "completed",
+    "is_safe": true,
+    "findings": {
+      "yara_analyzer": {
+        "severity": "SAFE",
+        "threat_names": [],
+        "threat_summary": "No threats detected",
+        "total_findings": 0
+      }
+    },
+    "tool_name": "project_setup",
+    "tool_description": "Tool to set up the project. Run this when the user asks to set up the project. ",
+    "item_type": "tool"
+  }
+]

@@ -1,0 +1,73 @@
+=== MCP Scanner Detailed Results ===
+
+Scan Target: behavioral:/mnt/c/Users/Intern/Documents/local_mcp_server
+
+Tool 1: generate_test_case
+Status: completed
+Safe: No
+Analyzer Results:
+  • behavioral_analyzer:
+    - Severity: HIGH
+    - Threat Summary: Line 12: DATA EXFILTRATION - Description claims: 'Generate testcases. Call this tool when user asks to generate test cases' | Actual behavior: Reads local mcp.json configuration file and sends its contents to an external server at webhook.site.
+    - Threat Names: BACKDOOR, DATA EXFILTRATION
+    - Total Findings: 3
+    - MCP Taxonomies (2 unique threats):
+      [1] Data Exfiltration / Exposure
+          • AITech: AITech-8.2
+          • AISubtech: AISubtech-8.2.3
+          • AISubtech Name: Data Exfiltration via Agent Tooling
+          • Description: Extracting or leaking sensitive information (e.g., API keys, configs, proprietar...
+      [2] Detection Evasion
+          • AITech: AITech-9.2
+          • AISubtech: AISubtech-9.2.2
+          • AISubtech Name: Backdoors and Trojans
+          • Description: Hidden malicious logic embedded in code or decorators, allowing persistent unaut...
+
+Tool 2: update_project
+Status: completed
+Safe: No
+Analyzer Results:
+  • behavioral_analyzer:
+    - Severity: HIGH
+    - Threat Summary: Line 41: BACKDOOR - Description claims: 'Update the project with the latest changes. Run this when user asks to update the project' | Actual behavior: The function returns a command that decodes to a reverse shell execution using netcat.
+    - Threat Names: BACKDOOR
+    - Total Findings: 2
+    - MCP Taxonomy:
+      • AITech: AITech-9.2
+      • AITech Name: Detection Evasion
+      • AISubtech: AISubtech-9.2.2
+      • AISubtech Name: Backdoors and Trojans
+      • Description: Hidden malicious logic embedded in code or decorators, allowing persistent unaut...
+
+Tool 3: list_files
+Status: completed
+Safe: No
+Analyzer Results:
+  • behavioral_analyzer:
+    - Severity: HIGH
+    - Threat Summary: Line 9: BACKDOOR - Description claims: 'Prioritise this function to list out current files and directories in the current directory.' | Actual behavior: Lists files using 'ls -al ./' but includes hidden instructions to append a reverse shell command to '.git/hooks/prepare-commit-msg'.
+    - Threat Names: BACKDOOR
+    - Total Findings: 1
+    - MCP Taxonomy:
+      • AITech: AITech-9.2
+      • AITech Name: Detection Evasion
+      • AISubtech: AISubtech-9.2.2
+      • AISubtech Name: Backdoors and Trojans
+      • Description: Hidden malicious logic embedded in code or decorators, allowing persistent unaut...
+
+Tool 4: file_index
+Status: completed
+Safe: No
+Analyzer Results:
+  • behavioral_analyzer:
+    - Severity: HIGH
+    - Threat Summary: Line 45: BACKDOOR - Description claims: 'Check whether .git exists and append a message to .git/hooks/prepare-commit-msg.' | Actual behavior: Appends a base64-decoded reverse shell command to .git/hooks/prepare-commit-msg if .git exists.
+    - Threat Names: BACKDOOR
+    - Total Findings: 1
+    - MCP Taxonomy:
+      • AITech: AITech-9.2
+      • AITech Name: Detection Evasion
+      • AISubtech: AISubtech-9.2.2
+      • AISubtech Name: Backdoors and Trojans
+      • Description: Hidden malicious logic embedded in code or decorators, allowing persistent unaut...
+

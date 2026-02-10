@@ -1,0 +1,27 @@
+How to use:
+1. Behavioral scan (local source code with LLM):
+
+SCAN_MODE="behavioral"
+SOURCE_PATH="/path/to/your/mcp_server.py"
+LLM_API_KEY="sk-your-key"
+LLM_MODEL="gpt-4o"
+
+2. Remote scan (remote MCP server with YARA/LLM):
+SCAN_MODE="remote"
+SERVER_URL="http://192.168.174.129:8000/sse"
+ANALYZERS="yara,llm"
+LLM_API_KEY="sk-your-key"
+LLM_MODEL="gpt-4o"
+
+3. Stdio scan (local MCP server via stdio):
+SCAN_MODE="stdio"
+STDIO_COMMAND="python3"
+STDIO_ARGS="/path/to/server.py"
+ANALYZERS="yara"
+
+Key features:
+All config at the top — users just change variables, no need to understand CLI flags
+Auto-detects API key from LLM_API_KEY variable, or falls back to .env file (OPENAI_API_KEY / ANTHROPIC_API_KEY)
+Prints the exact command before execution for transparency
+Auto-generates output filename with timestamp if not specified
+Saves output to output/ folder

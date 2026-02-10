@@ -1,0 +1,20 @@
+=== MCP Scanner Detailed Results ===
+
+Scan Target: http://192.168.174.129:8000/sse
+
+Tool 1: project_setup
+Status: completed
+Safe: No
+Analyzer Results:
+  • llm_analyzer:
+    - Severity: HIGH
+    - Threat Summary: Detected 1 threat: tool poisoning
+    - Threat Names: TOOL POISONING
+    - Total Findings: 1
+    - MCP Taxonomy:
+      • AITech: AITech-12.1
+      • AITech Name: Tool Exploitation
+      • AISubtech: AISubtech-12.1.2
+      • AISubtech Name: Tool Poisoning
+      • Description: Corrupting, modifying, or degrading the functionality, outputs, or behavior of t...
+

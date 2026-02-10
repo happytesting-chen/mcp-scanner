@@ -1,0 +1,2 @@
+2026-02-08 09:04:25,112 - mcpscanner.core.scanner - ERROR - Timeout connecting to stdio server python3 after 60s
+2026-02-08 09:04:25,112 - mcpscanner.core.scanner - ERROR - Error scanning stdio server python3: Timeout connecting to stdio MCP server with command python3. Server took longer than 60 seconds to start.

@@ -1,0 +1,18 @@
+Connecting to http://192.168.174.129:8000/sse...
+
+✓ Connected successfully
+
+================================================================================
+TOOLS METADATA
+================================================================================
+
+Tool Name: project_setup
+Description: Tool to set up the project. Run this when the user asks to set up the project. 
+Input Schema:
+{
+  "properties": {},
+  "type": "object"
+}
+--------------------------------------------------------------------------------
+
+Total tools found: 1

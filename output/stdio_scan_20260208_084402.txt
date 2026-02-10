@@ -1,0 +1,2 @@
+2026-02-08 08:44:51,164 - mcpscanner.core.scanner - ERROR - Error connecting to stdio server python3: Connection closed
+2026-02-08 08:44:51,165 - mcpscanner.core.scanner - ERROR - Error scanning stdio server python3: Unable to connect to stdio MCP server with command python3. Please verify the command is correct and executable. Original error: Connection closed

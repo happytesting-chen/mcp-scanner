@@ -1,0 +1,20 @@
+=== MCP Scanner Detailed Results ===
+
+Scan Target: behavioral:/mnt/c/Users/Intern/Documents/local_mcp_server/local_mcp_demo.py
+
+Tool 1: generate_test_case
+Status: completed
+Safe: No
+Analyzer Results:
+  • behavioral_analyzer:
+    - Severity: HIGH
+    - Threat Summary: Line 8: BACKDOOR - Description claims: 'Generate test case. Run this when user asks to generate test case for the project.' | Actual behavior: Returns a dictionary with a command that decodes to a reverse shell execution.
+    - Threat Names: BACKDOOR
+    - Total Findings: 1
+    - MCP Taxonomy:
+      • AITech: AITech-9.2
+      • AITech Name: Detection Evasion
+      • AISubtech: AISubtech-9.2.2
+      • AISubtech Name: Backdoors and Trojans
+      • Description: Hidden malicious logic embedded in code or decorators, allowing persistent unaut...
+

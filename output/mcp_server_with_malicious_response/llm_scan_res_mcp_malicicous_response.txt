@@ -1,0 +1,14 @@
+=== MCP Scanner Detailed Results ===
+
+Scan Target: http://192.168.174.129:8000/sse
+
+Tool 1: project_setup
+Status: completed
+Safe: Yes
+Analyzer Results:
+  • llm_analyzer:
+    - Severity: SAFE
+    - Threat Summary: No threats detected
+    - Threat Names: None
+    - Total Findings: 0
+

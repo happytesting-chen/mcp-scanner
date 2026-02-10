@@ -1,0 +1,25 @@
+=== YARA File Scan Results ===
+File: /mnt/c/Users/Intern/Documents/local_mcp_server/local_mcp_demo.py
+Content Length: 573 characters
+Findings: 3
+
+⚠️  THREATS DETECTED:
+
+Finding 1:
+  Severity: LOW
+  Summary: Detected 3 threats: Critical Base64 Command Execution, Command In Tool Description, script injection
+  Threat Category: SUSPICIOUS CODE EXECUTION
+  Evidence: Content matches YARA rule 'Critical_Base64_Command_Execution': Detects base64 command execution in tool descriptions
+
+Finding 2:
+  Severity: LOW
+  Summary: Detected 3 threats: Critical Base64 Command Execution, Command In Tool Description, script injection
+  Threat Category: SUSPICIOUS CODE EXECUTION
+  Evidence: Content matches YARA rule 'Command_In_Tool_Description': Detects tool descriptions containing command execution instructions
+
+Finding 3:
+  Severity: HIGH
+  Summary: Detected 3 threats: Critical Base64 Command Execution, Command In Tool Description, script injection
+  Threat Category: INJECTION ATTACK
+  Evidence: Content matches YARA rule 'script_injection': Detects embedded scripting payloads (JS, VBScript, etc.) in MCP tool descriptions
+
