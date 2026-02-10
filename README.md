@@ -31,6 +31,7 @@ uv pip install -e .
 configure your own open ai api key(OPENAI_API_KEY) in your local env. check the file .env.example for reference. the code will load from your local envoriment
 
 #### For SCAN_MODE="behavioral":
+change this source_path to your own file path
 ```
 SOURCE_PATH="/mnt/c/Users/Intern/Documents/local_mcp_server/local_mcp_demo.py"
 ```
