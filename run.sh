@@ -79,8 +79,6 @@ if [ -n "$LLM_API_KEY" ]; then
     export MCP_SCANNER_LLM_API_KEY="$LLM_API_KEY"
 elif [ -n "$OPENAI_API_KEY" ]; then
     export MCP_SCANNER_LLM_API_KEY="$OPENAI_API_KEY"
-elif [ -n "$ANTHROPIC_API_KEY" ]; then
-    export MCP_SCANNER_LLM_API_KEY="$ANTHROPIC_API_KEY"
 fi
 
 if [ -n "$LLM_MODEL" ]; then
